@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import './App.css';
 
+console.log("App se está renderizando...");
+
 function App() {
   const [tareas, setTareas] = useState(() => {
     const tareasGuardadas = localStorage.getItem('tareas');
@@ -11,12 +13,11 @@ function App() {
   const [filtroDuracion, setFiltroDuracion] = useState(0);
   const [ordenReciente, setOrdenReciente] = useState(false);
 
-  // Guardar tareas en localStorage cada vez que cambian
+  // Guardar tareas en localStorage
   useEffect(() => {
     localStorage.setItem('tareas', JSON.stringify(tareas));
   }, [tareas]);
 
-  // useEffect para actualizar el título de la pestaña
   useEffect(() => {
     document.title = `Total: ${calcularTiempoTotal} minutos`;
   }, [calcularTiempoTotal]);
@@ -43,7 +44,6 @@ function App() {
     setTareas(tareas.filter((tarea) => tarea.id !== id));
   };
 
-  // Filtrado y ordenamiento
   const tareasFiltradas = useMemo(() => {
     let filtradas = tareas.filter(t => t.duracion >= filtroDuracion);
     if (ordenReciente) {
@@ -55,7 +55,7 @@ function App() {
   return (
     <div className="contenedor">
       <h1>Contador de Tareas</h1>
-      
+
       <div className="formulario">
         <input
           type="text"
@@ -79,7 +79,6 @@ function App() {
             type="number"
             value={filtroDuracion}
             onChange={(e) => setFiltroDuracion(parseInt(e.target.value))}
-            placeholder="Minutos"
           />
         </label>
 
