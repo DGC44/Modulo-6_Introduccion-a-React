@@ -18,12 +18,13 @@ function App() {
     localStorage.setItem('tareas', JSON.stringify(tareas));
   }, [tareas]);
 
+  const calcularTiempoTotal = useMemo(() => {
+    console.log("Calculando tiempo total...");
+    return tareas.reduce((total, tarea) => total + tarea.duracion, 0);
+  }, [tareas]);
+
   useEffect(() => {
     document.title = `Total: ${calcularTiempoTotal} minutos`;
-  }, [calcularTiempoTotal]);
-
-  const calcularTiempoTotal = useMemo(() => {
-    return tareas.reduce((total, tarea) => total + tarea.duracion, 0);
   }, [tareas]);
 
   const agregarTarea = () => {
