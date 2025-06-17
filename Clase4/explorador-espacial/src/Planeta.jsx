@@ -7,7 +7,7 @@ function Planeta({ nombre }) {
     return () => {
       console.log(`¡El planeta ${nombre} ha desaparecido!`);
     };
-  }, []);
+  }, [ nombre ]);
 
   return <div style={{ margin: '10px 0' }}>🪐 {nombre}</div>;
 }
