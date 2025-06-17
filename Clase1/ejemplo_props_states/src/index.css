@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, Helvetica, sans-serif
+}
+
+header {
+  position: relative;
+  width: 100%;
+  min-height: 50px;
+  background-color: #eaeaea;
+}
+
+header h1 {
+    text-align: center;
+}
+
+/* colors */
+
+.blue {
+  background-color: #0073e6;
+  color: #fff;
+}
+
+.red {
+  background-color: #e60000;
+  color: #fff;
+}
+
+.green {
+  background-color: #4cd964;
+  color: #fff;
+}
