@@ -54,7 +54,7 @@ function App() {
   }, [tareas, filtroDuracion, ordenReciente]);
 
   return (
-    <div className="contenedor">
+    <div className="container">
       <h1>Contador de Tareas</h1>
 
       <div className="formulario">
