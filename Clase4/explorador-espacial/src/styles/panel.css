@@ -1,0 +1,212 @@
+/* Fondo espacial */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(ellipse at center, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  color: #00ffc8;
+  min-height: 100vh;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00ffc8;
+  backdrop-filter: blur(5px);
+}
+
+/* Título */
+h1 {
+  font-size: 2.5rem;
+  color: #00ffc8;
+  text-align: center;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px #00ffc8;
+}
+
+/* Datos del panel */
+.status-panel {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.status-item {
+  background-color: rgba(0, 255, 200, 0.1);
+  border: 1px solid #00ffc8;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  flex: 1 1 200px;
+  text-align: center;
+  box-shadow: 0 0 10px #00ffc8;
+}
+
+/* Botón */
+button {
+  background-color: #00ffc8;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #00bfa6;
+  transform: scale(1.05);
+}
+
+/* Lista de planetas */
+.planetas-lista {
+  margin-top: 30px;
+}
+
+.planeta-item {
+  background-color: rgba(0, 255, 200, 0.1);
+  padding: 15px;
+  border: 1px solid #00ffc8;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px #00ffc8;
+}
+
+
+
+
+/* Bitácora */
+.bitacora-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00ffc8;
+  backdrop-filter: blur(5px);
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+form input[type="text"],
+form textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #00ffc8;
+  background-color: rgba(0, 255, 200, 0.1);
+  color: #00ffc8;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+form input[type="file"] {
+  color: #00ffc8;
+}
+
+/* Botón guardar */
+form button {
+  width: 150px;
+  align-self: flex-start;
+  background-color: #00ffc8;
+  color: #000;
+  font-weight: 700;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #00bfa6;
+}
+
+/* Lista de planetas */
+.planetas-registrados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjeta de planeta */
+.planeta-tarjeta {
+  background: rgba(0, 255, 200, 0.1);
+  border: 1px solid #00ffc8;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px #00ffc8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.planeta-tarjeta:hover {
+  transform: scale(1.05);
+}
+
+/* Nombre planeta */
+.planeta-titulo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #00ffc8;
+  text-shadow: 0 0 5px #00ffc8;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Descripción */
+.planeta-descripcion {
+  font-size: 1rem;
+  color: #b0fff9;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Imagen */
+.planeta-imagen {
+  max-width: 100%;
+  max-height: 180px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #00ffc8;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+/* Botones eliminar y editar */
+.botones-tarjeta {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  justify-content: center;
+}
+
+.botones-tarjeta button {
+  background-color: #00ffc8;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: #000;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.botones-tarjeta button:hover {
+  background-color: #00bfa6;
+}
