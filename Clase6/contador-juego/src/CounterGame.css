@@ -1,0 +1,219 @@
+/* Contenedor principal */
+.counter-container {
+  max-width: 420px;
+  margin: 50px auto;
+  padding: 30px 35px;
+  background: linear-gradient(145deg, #3a8dff, #1c4bd6);
+  border-radius: 20px;
+  box-shadow:
+    5px 5px 15px #1a399f,
+    -5px -5px 15px #5ca0ff;
+  color: #f0f4ff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.counter-container:hover {
+  background: linear-gradient(145deg, #529bff, #295ed7);
+}
+
+/* Título */
+.counter-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Grupo input */
+.input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.input-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  user-select: text;
+}
+
+.input-number {
+  width: 70px;
+  padding: 8px 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  text-align: center;
+  box-shadow:
+    inset 2px 2px 5px #1a3fa0,
+    inset -2px -2px 5px #5cb0ff;
+  background: linear-gradient(145deg, #2b6ede, #427ef7);
+  color: #f0f4ff;
+  transition: box-shadow 0.3s ease;
+}
+
+.input-number:focus {
+  box-shadow:
+    0 0 8px 3px #87ceff;
+  background: linear-gradient(145deg, #356ff2, #5ea3ff);
+}
+
+/* Botones grupo */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+/* Botones comunes */
+.btn {
+  padding: 14px 24px;
+  border-radius: 16px;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow:
+    5px 5px 10px #1a399f,
+    -5px -5px 10px #5ca0ff;
+  color: #f0f4ff;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto "brillo" al hover */
+.btn::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.btn:hover::after {
+  opacity: 1;
+  animation: shine 1s ease infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translate(-100%, -100%) rotate(45deg);
+  }
+  100% {
+    transform: translate(100%, 100%) rotate(45deg);
+  }
+}
+
+/* Animación al click */
+.btn:active {
+  transform: scale(0.93);
+  box-shadow:
+    inset 3px 3px 7px #1a399f,
+    inset -3px -3px 7px #5ca0ff;
+}
+
+/* Colores específicos de botones */
+.increment-btn {
+  background: linear-gradient(145deg, #27e63b, #20a91f);
+  box-shadow:
+    5px 5px 10px #176a11,
+    -5px -5px 10px #3ee553;
+}
+
+.increment-btn:hover {
+  background: linear-gradient(145deg, #39f74b, #2bbd23);
+}
+
+.decrement-btn {
+  background: linear-gradient(145deg, #f64a4a, #b71c1c);
+  box-shadow:
+    5px 5px 10px #7f1414,
+    -5px -5px 10px #f55858;
+}
+
+.decrement-btn:hover {
+  background: linear-gradient(145deg, #f76464, #d31f1f);
+}
+
+.reset-btn {
+  background: linear-gradient(145deg, #f6d84a, #b79f1c);
+  box-shadow:
+    5px 5px 10px #7f7414,
+    -5px -5px 10px #f5e758;
+  color: #222;
+}
+
+.reset-btn:hover {
+  background: linear-gradient(145deg, #f7e563, #d4b921);
+}
+
+.undo-btn {
+  background: linear-gradient(145deg, #4ab7f6, #1c6fb7);
+  box-shadow:
+    5px 5px 10px #14487e,
+    -5px -5px 10px #69c0ff;
+}
+
+.undo-btn:hover {
+  background: linear-gradient(145deg, #64c0ff, #2e83d9);
+}
+
+/* Historial */
+.history-title {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.history-list {
+  max-height: 220px;
+  overflow-y: auto;
+  padding-left: 20px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #1c47b7, #3a77ff);
+  box-shadow:
+    inset 4px 4px 6px rgba(255,255,255,0.15),
+    inset -4px -4px 6px rgba(0,0,0,0.3);
+  color: #cbe1ff;
+  user-select: text;
+}
+
+.history-empty {
+  text-align: center;
+  font-style: italic;
+  color: rgba(203, 225, 255, 0.6);
+  padding: 12px 0;
+}
+
+.history-item {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  transition: background-color 0.2s ease;
+  cursor: default;
+}
+
+.history-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
