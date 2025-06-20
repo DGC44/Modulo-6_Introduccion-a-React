@@ -1,0 +1,222 @@
+/* Contenedor principal */
+.inventory-container {
+  max-width: 550px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background-color: #f9f9f9;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  user-select: none;
+}
+
+/* Título principal */
+.inventory-container h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.9rem;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Inputs y botones principales */
+.input-group,
+.search-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.input-group input,
+.search-group input {
+  flex-grow: 1;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1.8px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.input-group input:focus,
+.search-group input:focus {
+  border-color: #2980b9;
+  box-shadow: 0 0 6px #74a9d8;
+}
+
+/* Botones estilizados */
+.btn {
+  padding: 10px 18px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  box-shadow: 0 3px 6px rgba(41, 128, 185, 0.4);
+  color: white;
+}
+
+.btn-add {
+  background-color: #2980b9;
+}
+
+.btn-add:hover {
+  background-color: #1c5d90;
+  box-shadow: 0 5px 10px rgba(28, 93, 144, 0.7);
+}
+
+.btn-clear {
+  background-color: #c0392b;
+  margin-left: 10px;
+}
+
+.btn-clear:hover {
+  background-color: #922b21;
+  box-shadow: 0 5px 10px rgba(146, 43, 33, 0.7);
+}
+
+/* Lista de productos */
+.inventory-list {
+  list-style: none;
+  padding-left: 0;
+  max-height: 280px;
+  overflow-y: auto;
+  border-top: 2px solid #2980b9;
+  border-radius: 0 0 14px 14px;
+  background-color: #fff;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Item producto */
+.inventory-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.inventory-item:last-child {
+  border-bottom: none;
+}
+
+.inventory-item:hover {
+  background-color: #ecf5fc;
+}
+
+/* Nombre y cantidad */
+.product-info {
+  font-weight: 600;
+  color: #2c3e50;
+  user-select: text;
+}
+
+/* Botones acción de producto */
+.product-actions button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.product-actions button.increment {
+  background-color: #27ae60;
+}
+
+.product-actions button.increment:hover {
+  background-color: #1e8449;
+}
+
+.product-actions button.decrement {
+  background-color: #e67e22;
+}
+
+.product-actions button.decrement:hover {
+  background-color: #b36117;
+}
+
+.product-actions button.remove {
+  background-color: #c0392b;
+}
+
+.product-actions button.remove:hover {
+  background-color: #922b21;
+}
+
+/* Mensaje sin productos */
+.no-products {
+  text-align: center;
+  font-style: italic;
+  color: #7f8c8d;
+  padding: 15px 0;
+  user-select: none;
+}
+
+/* Scrollbar personalizado para la lista */
+.inventory-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.inventory-list::-webkit-scrollbar-thumb {
+  background-color: #2980b9;
+  border-radius: 6px;
+}
+
+.inventory-list::-webkit-scrollbar-track {
+  background-color: #f0f4f7;
+  border-radius: 6px;
+}
+
+/* Categoría select */
+.input-category {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1.8px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s ease;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+}
+
+.input-category:focus {
+  border-color: #2980b9;
+  box-shadow: 0 0 6px #74a9d8;
+}
+
+/* Mensaje de error */
+.error-message {
+  color: #c0392b;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-align: center;
+  user-select: text;
+}
+
+/* Producto con cantidad baja */
+.low-quantity {
+  background-color: #fff4e5;
+  border-left: 5px solid #f39c12;
+  font-weight: 600;
+}
+
+.warning-text {
+  color: #d35400;
+  font-weight: 700;
+  margin-left: 8px;
+  user-select: none;
+}
