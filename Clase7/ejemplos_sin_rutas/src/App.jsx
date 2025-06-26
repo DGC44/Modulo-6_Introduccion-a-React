@@ -1,33 +1,45 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+
+function Navbar({ onSelect }) {
+  return (
+    <nav style={{ marginBottom: 20 }}>
+      <img src={reactLogo} alt="React Logo" />
+      <button onClick={() => onSelect('profile')}>Profile</button>
+      <button onClick={() => onSelect('visits')}>Visits</button>
+      <button onClick={() => onSelect('configuration')}>Configuration</button>
+    </nav>
+  )
+}
+
+function Profile() {
+  return <h1>Profile</h1>
+}
+
+function Visits() {
+  return <h1>Visits</h1>
+}
+
+function Configuration() {
+  return <h1>Configuration</h1>
+}
 
 function App() {
   const [count, setCount] = useState(0)
+  const [page, setPage] = useState('profile')
+
+  let content
+  if (page === 'profile') content = <Profile />
+  else if (page === 'visits') content = <Visits />
+  else if (page === 'configuration') content = <Configuration />
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navbar onSelect={setPage} />
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment Count</button>
+      {content}
     </>
   )
 }

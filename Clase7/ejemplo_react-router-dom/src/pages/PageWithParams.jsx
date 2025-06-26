@@ -9,8 +9,8 @@ export default function PageWithParams() {
     const [searchValue, setSearchValue] = useState("")
 
     useEffect(() => {
-        console.log(searchParams.get("s"))
-    },[]) 
+    console.log(searchParams.get("s"))
+    }, [searchParams, searchValue])
 
     function handleSearch() {
         setsearchParams({ s: searchValue })
